@@ -1,29 +1,588 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>UniSpeech Demo Samples</title>
+    <title>UniTTS Demo Samples</title>
   </head>
   <body>
     <article>
       <header>
-        <h1>UniSpeech Demo Samples</h1>
+        <h1>UniTTS Demo Samples</h1>
       </header>
     </article>
 
     <div>
         <h3>Authors</h3>
-        Minsu Kang, Sungjae Kim and Injung Kim (Handong Global University)
+            Minsu Kang, Sungjae Kim and Injung Kim (Handong Global University)
     </div>
     <div>
         <h3>Abstract</h3>
-            We propose a novel high-fidelity expressive speech synthesis model, UniSpeech, that learns and controls multiple non-hierarchically correlated attributes without conflict. UniSpeech represents phonemes and non-linguistic attributes in a single unified embedding space. The proposed method is particularly effective in reflecting both speaker ID and emotion because it does not add the variance by the two overlapping attributes redundantly, and predicts prosodic attributes based on the speaker and emotion IDs. UniSpeech learns the unified embedding space leveraging a residual network that extends FastSpeech2. We additionally applied a data augmentation technique to improve the fidelity and controllability over the non-linguistic attributes. In experiments, the visualization results exhibited that UniSpeech successfully learned multiple attributes in the unified embedding space. As well, UniSpeech synthesized high-fidelity speech signals while controlling multiple attributes, and transferred speech style from the reference speech.
+            We propose a novel high-fidelity expressive speech synthesis model, UniTTS, that learns and controls multiple non-hierarchically correlated attributes without conflict. UniTTS represents phonemes and non-linguistic attributes in a single unified embedding space. The proposed method is particularly effective in reflecting both speaker ID and emotion because it does not add the variance by the two overlapping attributes redundantly, and predicts prosodic attributes based on the speaker and emotion IDs. UniTTS learns the unified embedding space leveraging a residual network that extends FastSpeech2. We additionally applied a data augmentation technique to improve the fidelity and controllability over the non-linguistic attributes. In experiments, the visualization results exhibited that UniTTS successfully learned multiple attributes in the unified embedding space. As well, UniTTS synthesized high-fidelity speech signals while controlling multiple attributes, and transferred speech style from the reference speech.
+
+    </div>
+    
+    <br>
+    
 
     <div>
-	<br>
-	<br>
+        <br>
+        <br>
+        <h2>Speaker Similarity</h2>
+        <table style="text-align:center">
+            <tr>
+                <th>GT</th>
+                <th>GST + FastSpeech2</th>
+                <th>Concatenate Speaker and Emotion embedding</th>
+                <th>UniSpeech</th>
+                <th>UniSpeech - data aug.</th>
+                <th>UniSpeech - local prosody</th>
+                <th>UniSpeech - local prosody and data aug.</th>
+    
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/speaker_similarity/GT_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/GST-FS2_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/concat_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/speaker_similarity/GT_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/GST-FS2_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/concat_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/speaker_similarity/GT_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/GST-FS2_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/concat_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/speaker_similarity/GT_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/GST-FS2_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/concat_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/speaker_similarity/GT_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/GST-FS2_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/concat_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
+            </tr>
+        </table>
+    </div>
 
-	<h3> This page is under construction. The demo samples synthesized by UniSpeech will be presented soon. </h3>
+    <br><br>
 
+    <div>
+        <h2>Emotion Similarity</h2>
+        <table style="text-align:center">
+            <tr>
+                <th>GT</th>
+                <th>GST + FastSpeech2</th>
+                <th>Concatenate Speaker and Emotion embedding</th>
+                <th>UniSpeech</th>
+                <th>UniSpeech - data aug.</th>
+                <th>UniSpeech - local prosody</th>
+                <th>UniSpeech - local prosody and data aug.</th>
+    
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/emotion_similarity/GT_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/GST-FS2_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/concat_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/emotion_similarity/GT_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/GST-FS2_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/concat_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/emotion_similarity/GT_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/GST-FS2_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/concat_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/emotion_similarity/GT_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/GST-FS2_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/concat_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/emotion_similarity/GT_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/GST-FS2_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/concat_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
+            </tr>
+        </table>
+    </div>
+ 
+    <br><br>
+
+    <div>
+        <h2>Effect of Data augmentation</h2>
+
+        <br>
+
+        <h3>Pitch control</h3>
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>+</th>
+                <th>0</th>
+                <th>-</th>
+    
+            </tr>
+            <tr>
+                <td>GT mel</td>
+                <td><img src="samples/data_aug/pitch/GT_plus.png"></td>
+                <td><img src="samples/data_aug/pitch/GT.png"></td>
+                <td><img src="samples/data_aug/pitch/GT_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>GT wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch/GT_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/GT.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/GT_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. mel</td>
+                <td><img src="samples/data_aug/pitch/data_aug_plus.png"></td>
+                <td><img src="samples/data_aug/pitch/data_aug.png"></td>
+                <td><img src="samples/data_aug/pitch/data_aug_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch/data_aug_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/data_aug_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. mel</td>
+                <td><img src="samples/data_aug/pitch/wo_data_aug_plus.png"></td>
+                <td><img src="samples/data_aug/pitch/wo_data_aug.png"></td>
+                <td><img src="samples/data_aug/pitch/wo_data_aug_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch/wo_data_aug_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/wo_data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch/wo_data_aug_minus.wav"></audio></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <h3>Energy control</h3>
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>+</th>
+                <th>0</th>
+                <th>-</th>
+    
+            </tr>
+
+            <tr>
+                <td>GT mel</td>
+                <td><img src="samples/data_aug/energy/GT_plus.png"></td>
+                <td><img src="samples/data_aug/energy/GT.png"></td>
+                <td><img src="samples/data_aug/energy/GT_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>GT wavs</td>
+                <td><audio controls><source src="samples/data_aug/energy/GT_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/GT.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/GT_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. mel</td>
+                <td><img src="samples/data_aug/energy/data_aug_plus.png"></td>
+                <td><img src="samples/data_aug/energy/data_aug.png"></td>
+                <td><img src="samples/data_aug/energy/data_aug_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/energy/data_aug_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/data_aug_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. mel</td>
+                <td><img src="samples/data_aug/energy/wo_data_aug_plus.png"></td>
+                <td><img src="samples/data_aug/energy/wo_data_aug.png"></td>
+                <td><img src="samples/data_aug/energy/wo_data_aug_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/energy/wo_data_aug_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/wo_data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/energy/wo_data_aug_minus.wav"></audio></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <h3>Pitch and energy control</h3>
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>0</th>
+                <th>pitch +, energy +</th>
+                <th>pitch +, energy -</th> 
+                <th>pitch -, energy +</th> 
+                <th>pitch -, energy -</th> 
+                
+            </tr>
+
+            <tr>
+                <td>GT mel</td>
+                <td><img src="samples/data_aug/pitch_and_energy/GT.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/GT_plus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/GT_plus_minus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/GT_minus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/GT_minus_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>GT wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/GT.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/GT_plus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/GT_plus_minus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/GT_minus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/GT_minus_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. mel</td>
+                <td><img src="samples/data_aug/pitch_and_energy/data_aug.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/data_aug_plus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/data_aug_plus_minus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/data_aug_minus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/data_aug_minus_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/ data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/data_aug_plus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/data_aug_plus_minus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/data_aug_minus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/data_aug_minus_minus.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. mel</td>
+                <td><img src="samples/data_aug/pitch_and_energy/wo_data_aug.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/wo_data_aug_plus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/wo_data_aug_plus_minus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/wo_data_aug_minus_plus.png"></td>
+                <td><img src="samples/data_aug/pitch_and_energy/wo_data_aug_minus_minus.png"></td>
+            </tr>
+
+            <tr>
+                <td>w/o data aug. wavs</td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/wo_data_aug.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/wo_data_aug_plus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/wo_data_aug_plus_minus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/wo_data_aug_minus_plus.wav"></audio></td>
+                <td><audio controls><source src="samples/data_aug/pitch_and_energy/wo_data_aug_minus_minus.wav"></audio></td>
+            </tr>
+        </table>
+    </div>
+
+    <br><br><br>
+
+    <div>
+        <h2>Style Mixing</h2>
+        <br>
+        <h3>Speaker identity transfer</h3>
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>Speaker</th>
+                <th>Other prosodies</th>
+                <th>Mixed</th>
+            </tr>
+
+            <tr>
+                <td>Male (1) speaker + Male (2) prosody mel</td>
+                <td><img src="samples/style_mixing/speaker/male_male_speaker.png"></td>
+                <td><img src="samples/style_mixing/speaker/male_male_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/speaker/male_male_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Male (1) speaker + Male (2) prosody wav</td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_male_speaker.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_male_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_male_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>Male speaker + Female prosody mel</td>
+                <td><img src="samples/style_mixing/speaker/male_female_speaker.png"></td>
+                <td><img src="samples/style_mixing/speaker/male_female_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/speaker/male_female_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Male speaker + Female prosody wav</td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_female_speaker.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_female_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/male_female_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>FeMale speaker + Male prosody mel</td>
+                <td><img src="samples/style_mixing/speaker/female_male_speaker.png"></td>
+                <td><img src="samples/style_mixing/speaker/female_male_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/speaker/female_male_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Female speaker + Male prosody wav</td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_male_speaker.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_male_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_male_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>Female (1) speaker + Female (2) prosody mel</td>
+                <td><img src="samples/style_mixing/speaker/female_female_speaker.png"></td>
+                <td><img src="samples/style_mixing/speaker/female_female_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/speaker/female_female_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Female (1) speaker + Female (2) prosody wav</td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_female_speaker.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_female_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/speaker/female_female_mixed.wav"></audio></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <h3>Emotion representation transfer</h3>
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>Emotion</th>
+                <th>Other prosodies</th>
+                <th>Mixed</th>
+            </tr>
+
+            <tr>
+                <td>Neutral emotion + other prosodies mel</td>
+                <td><img src="samples/style_mixing/emotion/neu_emotion.png"></td>
+                <td><img src="samples/style_mixing/emotion/neu_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/emotion/neu_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Neutral emotion + other prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/emotion/neu_emotion.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/neu_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/neu_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>Happy emotion + other prosodies mel</td>
+                <td><img src="samples/style_mixing/emotion/hap_emotion.png"></td>
+                <td><img src="samples/style_mixing/emotion/hap_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/emotion/hap_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Happy emotion + other prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/emotion/hap_emotion.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/hap_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/hap_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>Sad emotion + other prosodies mel</td>
+                <td><img src="samples/style_mixing/emotion/sad_emotion.png"></td>
+                <td><img src="samples/style_mixing/emotion/sad_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/emotion/sad_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Sad emotion + other prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/emotion/sad_emotion.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/sad_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/sad_mixed.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>Angry emotion + other prosodies mel</td>
+                <td><img src="samples/style_mixing/emotion/ang_emotion.png"></td>
+                <td><img src="samples/style_mixing/emotion/ang_other_prosodies.png"></td>
+                <td><img src="samples/style_mixing/emotion/ang_mixed.png"></td>
+            </tr>
+            <tr>
+                <td>Angry emotion + other prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/emotion/ang_emotion.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/ang_other_prosodies.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/emotion/ang_mixed.wav"></audio></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <h3>Transfer emotion, duration, pitch and energy representations to KSS speaker</h3>
+        (Please note that no emotion label exists in KSS dataset)
+
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>KSS speaker</th>
+                <th>Other prosodies</th>
+                <th>Mixed</th>
+            </tr>
+
+            <tr>
+                <td>KSS + emh speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kss/kss_1.png"></td>
+                <td><img src="samples/style_mixing/kss/male_1.png"></td>
+                <td><img src="samples/style_mixing/kss/mixed_1.png"></td>
+            </tr>
+            <tr>
+                <td>KSS + emh speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kss/kss_1.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/male_1.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/mixed_1.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>KSS + emg speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kss/kss_2.png"></td>
+                <td><img src="samples/style_mixing/kss/male_2.png"></td>
+                <td><img src="samples/style_mixing/kss/mixed_2.png"></td>
+            </tr>
+            <tr>
+                <td>KSS + emg speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kss/kss_2.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/male_2.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/mixed_2.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>KSS + ema speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kss/kss_3.png"></td>
+                <td><img src="samples/style_mixing/kss/female_3.png"></td>
+                <td><img src="samples/style_mixing/kss/mixed_3.png"></td>
+            </tr>
+            <tr>
+                <td>KSS + ema speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kss/kss_3.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/female_3.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/mixed_3.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>KSS + emh speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kss/kss_4.png"></td>
+                <td><img src="samples/style_mixing/kss/female_4.png"></td>
+                <td><img src="samples/style_mixing/kss/mixed_4.png"></td>
+            </tr>
+            <tr>
+                <td>KSS + emh speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kss/kss_4.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/female_4.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kss/mixed_4.wav"></audio></td>
+            </tr>
+
+        </table>
+
+        <br><br>
+
+        <h3>Mix speaker and emotion representations of KES speaker and prosodies of speakers in EmotionTTS dataset</h3>
+        (Please note that no surprise, fear and disgusting emotions exist in EmotionTTS-open-DB dataset)
+
+        <table style="text-align:center">
+            <tr>
+                <th></th>
+                <th>KES speaker + emotion</th>
+                <th>Other prosodies  in EmotionTTS dataset</th>
+                <th>Mixed</th>
+            </tr>
+
+            <tr>
+                <td>KES-disgusting + emh speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kes/kes_1.png"></td>
+                <td><img src="samples/style_mixing/kes/other_prosodies_1.png"></td>
+                <td><img src="samples/style_mixing/kes/mixed_1.png"></td>
+            </tr>
+            <tr>
+                <td>KES-disgusting + emh speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kes/kes_1.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_1.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/mixed_1.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>KES-surprise + emb speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kes/kes_2.png"></td>
+                <td><img src="samples/style_mixing/kes/other_prosodies_2.png"></td>
+                <td><img src="samples/style_mixing/kes/mixed_2.png"></td>
+            </tr>
+            <tr>
+                <td>KES-surprise + emb speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kes/kes_2.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_2.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/mixed_2.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td>KES-fear + emh speaker's prosodies mel</td>
+                <td><img src="samples/style_mixing/kes/kes_3.png"></td>
+                <td><img src="samples/style_mixing/kes/other_prosodies_3.png"></td>
+                <td><img src="samples/style_mixing/kes/mixed_3.png"></td>
+            </tr>
+            <tr>
+                <td>KES-fear + emh speaker's prosodies wav</td>
+                <td><audio controls><source src="samples/style_mixing/kes/kes_3.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/other_prosodies_3.wav"></audio></td>
+                <td><audio controls><source src="samples/style_mixing/kes/mixed_3.wav"></audio></td>
+            </tr>
+        </table>
     </div>
   </body>
 </html>
