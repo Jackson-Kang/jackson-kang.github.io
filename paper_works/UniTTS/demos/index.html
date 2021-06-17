@@ -1,12 +1,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>UniSpeech Demo Samples</title>
+    <title>UniTTS Demo Samples</title>
   </head>
   <body>
     <article>
       <header>
-        <h1>UniSpeech Demo Samples (will be renamed to UniTTS.)</h1>
+        <h1>UniTTS Demo Samples</h1>
       </header>
     </article>
 
@@ -16,13 +16,13 @@
     </div>
     <div>
         <h3>Abstract</h3>
-            We propose a novel high-fidelity expressive speech synthesis model, UniSpeech, that learns and controls multiple non-hierarchically correlated attributes without conflict. 
-            UniSpeech represents phonemes and non-linguistic attributes in a single unified embedding space. 
+            We propose a novel high-fidelity expressive speech synthesis model, UniTTS, that learns and controls multiple non-hierarchically correlated attributes without conflict. 
+            UniTTS represents phonemes and non-linguistic attributes in a single unified embedding space. 
             The proposed method is particularly effective in reflecting both speaker ID and emotion because it does not add the variance by the two overlapping attributes redundantly, and predicts prosodic attributes based on the speaker and emotion IDs. 
             UniTTS learns the unified embedding space leveraging a residual network that extends FastSpeech2. 
             We additionally applied a data augmentation technique to improve the fidelity and controllability over the non-linguistic attributes. 
             In experiments, the visualization results exhibited that UniTTS successfully learned multiple attributes in the unified embedding space. 
-            As well, UniSpeech synthesized high-fidelity speech signals while controlling multiple attributes, and transferred speech style from the reference speech.
+            As well, UniTTS synthesized high-fidelity speech signals while controlling multiple attributes, and transferred speech style from the reference speech.
     </div>
     
     <br>
@@ -30,74 +30,74 @@
     <div>
         <h2>Speaker Modeling</h2>
 
-        These audio samples demonstrate the speaker modeling performance of UniSpeech. <br>
+        These audio samples demonstrate the speaker modeling performance of UniTTS. <br>
         Please compare the audio samples focusing on the similarity in speaker characteristics between the ground-truth and the synthesized samples.<br>
  
         &nbsp;&nbsp;&nbsp; - Column 1: the ground-truth samples. <br>
-        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniSpeech's speaker(or emotion) modeling performance with other expressive TTS models<br>
+        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniTTS's speaker(or emotion) modeling performance with other expressive TTS models<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 2: FastSpeech2 extended by applying GST for extracting style embedding from the reference sample (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniSpeech using separate embeddings for speaker ID and emotion (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniSpeech using unified embedding (proposed)<br>
-        &nbsp;&nbsp;&nbsp; - Columns 5~7: audio samples demonstrating the effects of the techniques used in UniSpeech<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniSpeech not applying data augmentation<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniSpeech not applying grapheme-level local prosody modeling<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 7: UniSpeech not applying grapheme-level local prosody modeling and data augmentation.<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniTTS using separate embeddings for speaker ID and emotion (for comparison)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniTTS using unified embedding (proposed)<br>
+        &nbsp;&nbsp;&nbsp; - Columns 5~7: audio samples demonstrating the effects of the techniques used in UniTTS<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniTTS not applying data augmentation<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniTTS not applying grapheme-level local prosody modeling<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 7: UniTTS not applying grapheme-level local prosody modeling and data augmentation.<br><br>
 
         <table style="text-align:center">
             <tr>
                 <th>GT</th>
                 <th>GST FastSpeech2 (reference encoder)</th>
-                <th>UniSpeech - separate embeddings for speaker ID and emotion</th>
-                <th>UniSpeech - unified embedding (proposed)</th>
-                <th>UniSpeech - data aug.</th>
-                <th>UniSpeech - local prosody</th>
-                <th>UniSpeech - local prosody - data aug.</th>
+                <th>UniTTS - separate embeddings for speaker ID and emotion</th>
+                <th>UniTTS - unified embedding (proposed)</th>
+                <th>UniTTS - data aug.</th>
+                <th>UniTTS - local prosody</th>
+                <th>UniTTS - local prosody - data aug.</th>
     
             </tr>
             <tr>
                 <td><audio controls><source src="samples/speaker_similarity/GT_4.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/GST-FS2_4.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/concat_4.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_4.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_4.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_4.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/speaker_similarity/GT_5.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/GST-FS2_5.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/concat_5.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_5.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_5.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_5.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/speaker_similarity/GT_1.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/GST-FS2_1.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/concat_1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_1.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/speaker_similarity/GT_3.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/GST-FS2_3.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/concat_3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_3.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/speaker_similarity/GT_2.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/GST-FS2_2.wav"></audio></td>
                 <td><audio controls><source src="samples/speaker_similarity/concat_2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech_2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug_2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-local-prosody_2.wav"></audio></td>
-                <td><audio controls><source src="samples/speaker_similarity/UniSpeech-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/speaker_similarity/UniTTS-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
             </tr>
         </table>
     </div>
@@ -107,73 +107,73 @@
     <div>
         <h2>Emotion Modeling</h2>
 
-        These audio samples demonstrate the speaker modeling performance of UniSpeech. Please compare the audio samples focusing on the similarity in emotion between the ground-truth and the synthesized samples.<br>
+        These audio samples demonstrate the speaker modeling performance of UniTTS. Please compare the audio samples focusing on the similarity in emotion between the ground-truth and the synthesized samples.<br>
 
         &nbsp;&nbsp;&nbsp; - Column 1: the ground-truth samples. <br>
-        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniSpeech's speaker(or emotion) modeling performance with other expressive TTS models<br>
+        &nbsp;&nbsp;&nbsp; - Column 2~4: audio samples demonstrating UniTTS's speaker(or emotion) modeling performance with other expressive TTS models<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 2: FastSpeech2 extended by applying GST for extracting style embedding from the reference sample (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniSpeech using separate embeddings for speaker ID and emotion (for comparison)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniSpeech using unified embedding (proposed)<br>
-        &nbsp;&nbsp;&nbsp; - Columns 5~7: audio samples demonstrating the effects of the techniques used in UniSpeech<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniSpeech not applying data augmentation<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniSpeech not applying grapheme-level local prosody modeling<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 7: UniSpeech not applying grapheme-level local prosody modeling and data augmentation.<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 3: UniTTS using separate embeddings for speaker ID and emotion (for comparison)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 4: UniTTS using unified embedding (proposed)<br>
+        &nbsp;&nbsp;&nbsp; - Columns 5~7: audio samples demonstrating the effects of the techniques used in UniTTS<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 5: UniTTS not applying data augmentation<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 6: UniTTS not applying grapheme-level local prosody modeling<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Column 7: UniTTS not applying grapheme-level local prosody modeling and data augmentation.<br><br>
 
         <table style="text-align:center">
             <tr>
                 <th>GT</th>
                 <th>GST FastSpeech2 (reference encoder)</th>
-                <th>UniSpeech - separate embeddings for speaker ID and emotion</th>
-                <th>UniSpeech - unified embedding (proposed)</th>
-                <th>UniSpeech - data aug.</th>
-                <th>UniSpeech - local prosody</th>
-                <th>UniSpeech - local prosody - data aug.</th>
+                <th>UniTTS - separate embeddings for speaker ID and emotion</th>
+                <th>UniTTS - unified embedding (proposed)</th>
+                <th>UniTTS - data aug.</th>
+                <th>UniTTS - local prosody</th>
+                <th>UniTTS - local prosody - data aug.</th>
     
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_3.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/GST-FS2_3.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/concat_3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_3.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-local-prosody_3.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug-wo-local-prosody_3.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_1.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/GST-FS2_1.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/concat_1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_1.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-local-prosody_1.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug-wo-local-prosody_1.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_2.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/GST-FS2_2.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/concat_2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_2.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-local-prosody_2.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug-wo-local-prosody_2.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_4.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/GST-FS2_4.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/concat_4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_4.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-local-prosody_4.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug-wo-local-prosody_4.wav"></audio></td>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_5.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/GST-FS2_5.wav"></audio></td>
                 <td><audio controls><source src="samples/emotion_similarity/concat_5.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech_5.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug_5.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-local-prosody_5.wav"></audio></td>
-                <td><audio controls><source src="samples/emotion_similarity/UniSpeech-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-local-prosody_5.wav"></audio></td>
+                <td><audio controls><source src="samples/emotion_similarity/UniTTS-wo-data-aug-wo-local-prosody_5.wav"></audio></td>
             </tr>
         </table>
     </div>
@@ -184,7 +184,7 @@
     <div>
         <h2> Speaker and emotion modeling </h2>
 
-        These audio samples demonstrate the speaker and emotion modeling performance of UniSpeech. <br>
+        These audio samples demonstrate the speaker and emotion modeling performance of UniTTS. <br>
 
         <table style="text-align:center">
             <tr>
@@ -269,13 +269,13 @@
 
         <h3>Energy control</h3>
 
-        The following samples were synthesized by UniSpeech with increased or decreased energy values.	<br>
+        The following samples were synthesized by UniTTS with increased or decreased energy values.	<br>
 
         &nbsp;&nbsp;&nbsp;&nbsp; - Row 1: the ground truth samples and augmented samples whose energy values were increased or decreased using the SOX toolkit.<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; - Row 2: the audio samples synthesized by UniSpeech applying data augmentation <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; - Row 3: the audio samples synthesized by UniSpeech not applying data augmentation<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; - Row 2: the audio samples synthesized by UniTTS applying data augmentation <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; - Row 3: the audio samples synthesized by UniTTS not applying data augmentation<br><br>
     
-        Without data augmentation, UniSpeech produced speech samples with deteriorated quality when the energy value was increased or decreased. Particularly, when the energy value was decreased, it produced severly broken and distorted samples. <br>
+        Without data augmentation, UniTTS produced speech samples with deteriorated quality when the energy value was increased or decreased. Particularly, when the energy value was decreased, it produced severly broken and distorted samples. <br>
         However, when applying data augmentation, it produced clean samples even with increased or decreased energy values. <br><br>
     
         <table style="text-align:center">
@@ -334,14 +334,14 @@
 
         <h3>Pitch control</h3>
 
-        The following samples were synthesized by UniSpeech with increased or decreased pitch values. <br>
+        The following samples were synthesized by UniTTS with increased or decreased pitch values. <br>
         Please note that adjusting the pitch of the voice using the SOX toolkit has a side-effect that changes the timbre as shown in the first row. <br>
     
         &nbsp;&nbsp;&nbsp;&nbsp; - Row 1: the ground truth samples and augmented samples whose pitch values were increased or decreased using the SOX toolkit. <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; - Row 2: the audio samples synthesized by UniSpeech applying data augmentation <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; - Row 3: the audio samples synthesized by UniSpeech not applying data augmentation <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; - Row 2: the audio samples synthesized by UniTTS applying data augmentation <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; - Row 3: the audio samples synthesized by UniTTS not applying data augmentation <br><br>
     
-        Without data augmentation, UniSpeech shows limited ability to control pitch, as shown more clearly in the spectrograms. <br>
+        Without data augmentation, UniTTS shows limited ability to control pitch, as shown more clearly in the spectrograms. <br>
         When applying data augmentation, it controlled pitch more effectively but changed timbre, because it was trained with the augmented samples whose timbre was changed due to the side-effect of the SOX toolkit. <br>
         We ask the listener to compare the samples focusing on the ability to control pitch.<br><br>
 
@@ -401,8 +401,8 @@
 
         <h3>Pitch and energy control</h3>
 
-        The following samples were synthesized by UniSpeech controling both pitch and energy. <br>
-        Applying data augmenation, UniSpeech can effectively control pitch and energy. <br><br>
+        The following samples were synthesized by UniTTS controling both pitch and energy. <br>
+        Applying data augmenation, UniTTS can effectively control pitch and energy. <br><br>
     
         <table style="text-align:center">
             <tr>
