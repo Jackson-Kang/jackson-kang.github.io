@@ -28,6 +28,79 @@
     <br>
 
     <div>
+        <h2>Visualization of Latent Space</h2>
+        These visualization results illustrate the latent space of style attributes modeled by UniSpeech.      <br>
+
+        <h3>Unstyled phoneme embeddings</h3>
+        
+        <table style="text-align:center">
+            <tr>
+                <th><img src="./samples/visualizations/4-a.gif" width=400> </th>
+                <th><img src="./samples/visualizations/4-b.gif" width=400> </th>
+                <th><img src="./samples/visualizations/4-c.gif" width=400> </th>
+            </tr>
+            <tr>
+                <th>(a) Unstyled phoneme embeddings<br> colored by phoneme type</th>
+                <th>(b) Unstyled phoneme embeddings<br> colored by speaker label</th>
+                <th>(c) Unstyled phoneme embeddings<br> colored by emotion label</th>
+            </tr>
+        </table>
+        <br>
+        These figures are the t-SNE visualization of the distribution of the unstyled phoneme embeddings extracted from the locations marked as A in Figure 3 (please refer the paper).<br> 
+        (a) shows that the unstyled phoneme embedding represents phoneme types, while (b)and (c) show that it does not contain speaker or emotion information. <br>
+
+        <br>
+
+        <h3>Residual embeddings</h3>
+        <table style="text-align:center">
+            <tr>
+                <th><img src="./samples/visualizations/5-a.gif" width=400> </th>
+                <th><img src="./samples/visualizations/5-b.gif" width=400> </th>
+                <th><img src="./samples/visualizations/5-c.png" width=400> </th>
+                <th><img src="./samples/visualizations/5-d.png" width=400> </th>
+                
+            </tr>
+            <tr>
+                <th>(a) t-SNE visualization of speaker embeddings<br> (B-A) colored by speaker label</th>
+                <th>(b) t-SNE visualization of emotion embeddings<br> (C-B) colored by emotion label</th>
+                <th>(c) PCA visualization of pitch embeddings<br> (E-D) colored by predicted pitch value</th>
+                <th>(d) PCA visualization of energy embeddings<br> (F-E) colored by predicted energy value</th>
+            </tr>
+        </table>
+        <br>
+        These figures are the distribution of the residual embeddings of speaker, emotion, pitch, and energy. (Please note that A, B, C, D, E and F are denoted in paper-figure 3.) <br>
+        The uppercase letters indicate the locations in Fig. 3 where the embeddings were extracted. <br>
+        These figures show that the residual embeddings are effective in representing the style attributes.
+        
+        <br><br>
+
+        <h3>Full style embeddings</h3>
+        <table style="text-align:center">
+            <tr>
+                <th><img src="./samples/visualizations/6-a.gif" width=400> </th>
+                <th><img src="./samples/visualizations/6-b.gif" width=400> </th>
+                <th><img src="./samples/visualizations/6-c.gif" width=400> </th>
+                <th><img src="./samples/visualizations/6-d.gif" width=400> </th>
+                
+            </tr>
+            <tr>
+                <th>(a) Full-style embeddings(F-A)<br> colored by speaker label</th>
+                <th>(b) Full-style embeddings(F-A)<br> colored by emotion label</th>
+                <th>(c) Full-style embeddings<br> normalized by speaker embedding<br> (F-B) colored by speaker label</th>
+                <th>(d) Full-style embeddings<br> normalized by speaker embedding<br> (F-B) colored by emotion label</th>
+            </tr>
+        </table>
+        <br>
+        These figures are the t-SNE visualization of the distribution of the full-style embeddings that incorporate all style attributes. <br>
+        The uppercase letters indicate the locations in Fig. 3 where the embeddings were extracted. <br>
+        (a) and (b)show that the full-style embedding contains both speaker and emotion information. <br>
+        (c) shows that the full-style embedding normalized by the means of the speaker embeddings does not contain speaker information. <br>
+        (d) shows that the variance in emotion is dominant after normalizing the full-style embedding by the means of speaker embeddings. <br>
+    </div>
+
+    <br><br>
+
+    <div>
         <h2>Speaker Modeling</h2>
 
         These audio samples demonstrate the speaker modeling performance of UniSpeech. <br>
@@ -46,12 +119,12 @@
         <table style="text-align:center">
             <tr>
                 <th>GT</th>
-                <th>GST FastSpeech2 (reference encoder)</th>
-                <th>UniSpeech: separate embeddings for speaker ID and emotion</th>
-                <th>UniSpeech: unified embedding (proposed)</th>
-                <th>UniSpeech - data aug.</th>
-                <th>UniSpeech - local prosody</th>
-                <th>UniSpeech - local prosody - data aug.</th>
+                <th>GST FastSpeech2<br> (reference encoder)</th>
+                <th>UniSpeech:<br> separate embeddings <br>for speaker ID and emotion</th>
+                <th>UniSpeech:<br> unified embedding (proposed)</th>
+                <th>UniSpeech<br> - data aug.</th>
+                <th>UniSpeech<br> - local prosody</th>
+                <th>UniSpeech<br> - local prosody - data aug.</th>
     
             </tr>
             <tr>
@@ -122,13 +195,12 @@
         <table style="text-align:center">
             <tr>
                 <th>GT</th>
-                <th>GST FastSpeech2 (reference encoder)</th>
-                <th>UniSpeech: separate embeddings for speaker ID and emotion</th>
-                <th>UniSpeech: unified embedding (proposed)</th>
-                <th>UniSpeech - data aug.</th>
-                <th>UniSpeech - local prosody</th>
-                <th>UniSpeech - local prosody - data aug.</th>
-    
+                <th>GST FastSpeech2<br> (reference encoder)</th>
+                <th>UniSpeech:<br> separate embeddings <br>for speaker ID and emotion</th>
+                <th>UniSpeech:<br> unified embedding (proposed)</th>
+                <th>UniSpeech<br> - data aug.</th>
+                <th>UniSpeech<br> - local prosody</th>
+                <th>UniSpeech<br> - local prosody - data aug.</th>
             </tr>
             <tr>
                 <td><audio controls><source src="samples/emotion_similarity/GT_3.wav"></audio></td>
