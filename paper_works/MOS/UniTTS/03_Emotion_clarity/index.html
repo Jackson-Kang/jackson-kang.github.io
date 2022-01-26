@@ -1,33 +1,26 @@
 <html>
   <head>
     <meta charset="cp949">
-    <title>UniTTS MOS test</title>
+    <title>MOS test</title>
   </head>
   <body>
     <article>
       <header>
-        <h1>UniTTS Mean Opinion Score test</h1>
+        <h1>Section 03. 감정 표현력 평가</h1>
       </header>
     </article>
-
-    <div>
-        <h3>Authors</h3>
-        Minsu Kang, Sungjae Kim and Injung Kim (Handong Global University)
-    </div>
 
 	<br>
 	<br>
 	<h1>[주의사항]</h1>
 	<br>
 	<h2>1. 본 section은 합성된 음성과 실제 음성 간의 감정 명확성을 테스트 하는 section입니다.</h2>
-	<h3>&nbsp;&nbsp;&nbsp;실제 음성을 먼저 청취하신 후, 실제 음성의 감정과 합성 음성의 감정이 얼마나 명확하고, 유사한지 평가하시면 됩니다. </h3>
+	<h3>&nbsp;&nbsp;&nbsp;실제 음성을 먼저 청취하신 후, 각 합성 음성에 표현된 감정이 실제 음성과 얼마나 유사한지 평가해주세요. </h3>
 	<br>
-	<h2>2. 정확한 평가를 위해 이어폰 또는 헤드셋 착용을 권장드립니다.</h2>
+	<h2>2. 정확한 평가를 위해 반드시 이어폰 또는 헤드셋을 이용해 평가해주세요."</h2>
 	<br>
 
 	<br>
-	<br>
-	<h3>Section 03: 감정의 명확성 테스트</h3>
 
 	<table>
 		<tr>
@@ -46,8 +39,8 @@
 		<tr>
 			<td>1. </td>
 			<td><audio controls><source src="./samples/GT_mel/1.wav"></audio></td>
-			<td><audio controls><source src="./samples/sep_emb/1.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_cond_norm/1.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb/1.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_grad_rev/1.wav"></audio></td>
 			<td><audio controls><source src="./samples/trained_from_scratch/1.wav"></audio></td>
 			<td><audio controls><source src="./samples/proposed_wo_aug/1.wav"></audio></td>
@@ -72,8 +65,8 @@
 		<tr>
 			<td>2. </td>
 			<td><audio controls><source src="./samples/GT_mel/2.wav"></audio></td>
-			<td><audio controls><source src="./samples/sep_emb/2.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_cond_norm/2.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb/2.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_grad_rev/2.wav"></audio></td>
 			<td><audio controls><source src="./samples/trained_from_scratch/2.wav"></audio></td>
 			<td><audio controls><source src="./samples/proposed_wo_aug/2.wav"></audio></td>
@@ -98,8 +91,8 @@
 		<tr>
 			<td>3. </td>
 			<td><audio controls><source src="./samples/GT_mel/3.wav"></audio></td>
-			<td><audio controls><source src="./samples/sep_emb/3.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_cond_norm/3.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb/3.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_grad_rev/3.wav"></audio></td>
 			<td><audio controls><source src="./samples/trained_from_scratch/3.wav"></audio></td>
 			<td><audio controls><source src="./samples/proposed_wo_aug/3.wav"></audio></td>
@@ -124,12 +117,38 @@
 		<tr>
 			<td>4. </td>
 			<td><audio controls><source src="./samples/GT_mel/4.wav"></audio></td>
-			<td><audio controls><source src="./samples/sep_emb/4.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_cond_norm/4.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb/4.wav"></audio></td>
 			<td><audio controls><source src="./samples/sep_emb_grad_rev/4.wav"></audio></td>
 			<td><audio controls><source src="./samples/trained_from_scratch/4.wav"></audio></td>
 			<td><audio controls><source src="./samples/proposed_wo_aug/4.wav"></audio></td>
 			<td><audio controls><source src="./samples/proposed/4.wav"></audio></td>
+		</tr>
+	</table>
+	<br><br>
+	<table>
+		<tr>
+			<th>No.</th>
+			<th>참조 음성-5</th> 
+			<th>(1)</th>
+			<th>(2)</th>	
+			<th>(3)</th>
+			<th>(4)</th>
+			<th>(5)</th>
+			<th>(6)</th>
+		</tr>
+		<tr>
+			5번 문항입니다.
+		</tr>
+		<tr>
+			<td>5. </td>
+			<td><audio controls><source src="./samples/GT_mel/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb_cond_norm/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/sep_emb_grad_rev/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/trained_from_scratch/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/proposed_wo_aug/5.wav"></audio></td>
+			<td><audio controls><source src="./samples/proposed/5.wav"></audio></td>
 		</tr>
 	</table>
     </div>
